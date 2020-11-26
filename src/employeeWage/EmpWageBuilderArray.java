@@ -37,15 +37,21 @@ public class EmpWageBuilderArray implements IComputeEmpWage {
 			switch(empCheck) {
 			    case IS_PART_TIME:
 			    	empHrs=4;
+			    	companyEmpWage.dailyEmpWage.add(empHrs*companyEmpWage.empRatePerHour);
+			    	
 			    	break;
 			    case IS_FULL_TIME:
 			    	empHrs=8;
+			    	companyEmpWage.dailyEmpWage.add(empHrs*companyEmpWage.empRatePerHour);
+			    	
 			    	break;
 			    default:
 			    	empHrs=0;
+			    	companyEmpWage.dailyEmpWage.add(empHrs*companyEmpWage.empRatePerHour);
 			}
 			totalEmpHrs+=empHrs;
 			System.out.println("Day#: "+totalWorkingDays+" Emp Hr: "+empHrs);
+			System.out.println("Day#: "+totalWorkingDays+" wage "+empHrs*companyEmpWage.empRatePerHour);
 		}
 		return totalEmpHrs*companyEmpWage.empRatePerHour;
 		
